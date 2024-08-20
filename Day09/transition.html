@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>transition</title>
+        <style>
+            /* 모든 자식요소 중에서 1번째 div에 대해  */
+            div:nth-child(1) {
+                /* 너비 50px에 */
+                width: 50px;
+                /* 높이는 50px로 */
+                height: 50px;
+                /* 배경색은 갈색으로 */
+                background-color: brown;
+                /* 변화의 대상은 배경색이고 
+                이에 대해 실행시간은 2s동안, 지연시간은 1s후에 반응하도록 한다. */
+                transition: background-color 2s 1s;
+            }
+
+            /* 모든 자식요소 중에서 1번째 div요소에 마우스를 올렸을 때 */
+            div:nth-child(1):hover {
+                /* 배경색을 파란색으로 변경해라 */
+                background-color: blue;
+            }
+
+            /* 모든 자식요소 중 2번째 div요소에 대해 */
+            div:nth-child(2) {
+                /* 너비는 50px로 */
+                width: 50px;
+                /* 높이는 50px로 */
+                height: 50px;
+                /* 배경색은 갈색으로 지정 */
+                background-color: brown;
+                /* 해당 div요소에 대해 1s동안 변화를 실행시켜라 */
+                transition: all 1s;
+                /* transition-property: background-color, opacity, width, transform;
+            transition-duration: 1s;
+            transition-delay: 0s, 1s, 0s, 2s; */
+            }
+
+            /* 모든 자식요소 중 2번째 div요소에 마우스를 올렸을 때 */
+            div:nth-child(2):hover {
+                /* 너비는 100px로 */
+                width: 100px;
+                /* 배경색은 빨간색으로 */
+                background-color: red;
+                /* 투명도는 50%로 */
+                opacity: 50%;
+                /* x축으로 20px만큼 이동해라 */
+                transform: translateX(20px);
+            }
+
+            /* 모든 자식요소 중 3번째 div요소에 대해 */
+            div:nth-child(3) {
+                /* 배경이미지는 cacel로 */
+                background-image: url("./image/cancel.png");
+                /* 너비는 50px로 */
+                width: 50px;
+                /* 높이는 50px로 */
+                height: 50px;
+                /* div태그의 크기에 비해 이미지 크기가 너무 작을때는
+            반복될수있으므로 배경반복을 no-repeat으로  */
+                background-repeat: no-repeat;
+                /* div배경을 가득 채우고 */
+                background-size: 100% 100%;
+                /* 마우스커서를 올렸을 때 pointer로 지정한다. */
+                cursor: pointer;
+                /* 모든 변화에 대해 1s동안 진행되도록 지정 */
+                transition: all 1s;
+            }
+
+            /* 모든 자식요소 중 3번째 div요소에 마우스를 올렸을때 */
+            div:nth-child(3):hover {
+                /* 45도 각도로 회전시켜라 */
+                transform: rotate(45deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <div></div>
+        <div></div>
+    </body>
+</html>

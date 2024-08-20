@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>가상 요소</title>
+        <style>
+            /* 내용을 감싸고 있는 container 클래스명을 가진 div 태그에 대해
+            너비를 960px, margin: 0 auto를 사용하여 중앙에 배치한다. */
+            .container {
+                width: 960px;
+                margin: 0 auto;
+            }
+            ul li {
+                margin: 15px;
+            }
+
+            /* 클래스명을 new로 가진 list 태그에 대해 뒤에(::after)
+            NEW!!라는 내용을 붙이고, 글자크기는 작게, 배경색은 #f00으로
+            글자색은 #fff로 준다. */
+            li.new::after {
+                content: "NEW!!";
+                font-size: x-small;
+                padding: 2px 4px;
+                margin: 0 10px;
+                border-radius: 2px;
+                background: #f00;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>제품 목록</h1>
+            <ul>
+                <li class="new">제품 A</li>
+                <li>제품 B</li>
+                <li>제품 C</li>
+                <li class="new">제품 D</li>
+            </ul>
+        </div>
+    </body>
+</html>

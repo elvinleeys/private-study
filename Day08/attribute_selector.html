@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>속성 선택자</title>
+        <style>
+            ul {
+                list-style: none;
+            }
+            li {
+                width: 120px;
+                display: inline-block;
+                margin: 10px;
+            }
+            /* list태그의 모든 하위 a요소에 다음과 같은 스타일을 적용 */
+            li a {
+                padding: 5px 20px;
+                font-size: 14px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            /* a요소 중 href 속성을 지닌 모든 요소에 배경색을 yellow로
+            테두리는 1px의 실선을 글자 굵기를 보통으로 준다. */
+            a[href] {
+                background: yellow;
+                border: 1px solid #ccc;
+                font-weight: normal;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a>메인 메뉴 : </a></li>
+            <li><a href="#">메뉴 1</a></li>
+            <li><a href="#">메뉴 2</a></li>
+            <li><a href="#">메뉴 3</a></li>
+            <li><a href="#">메뉴 4</a></li>
+        </ul>
+    </body>
+</html>

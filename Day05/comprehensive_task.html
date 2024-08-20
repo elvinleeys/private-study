@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>종합실습</title>
+        <style>
+            /* 전체 콘텐츠를 감싸는 div */
+            #container {
+                /* 너비 */
+                width: 650px;
+                /* 가로로 중앙에 배치 */
+                margin: 0 auto;
+                /* 테두리와 내용 사이의 패딩 여백 */
+                padding: 5px;
+            }
+            /* 텍스트 부분을 감싸는 div */
+            #check {
+                /* 너비 - 그림 너비 값에 맞춤 */
+                width: 640px;
+                /* 테두리 */
+                border: 1px solid #ccc;
+            }
+
+            h1 {
+                /* 글자색 */
+                color: white;
+                /* 글자 크기 */
+                font-size: 1em;
+                /* 배경색 */
+                background: #222;
+                /* 제목과 다른 요소 간의 마진 여백 */
+                margin: 0;
+                /* 테두리와 제목 텍스트 사이의 패딩 여백 */
+                padding: 10px;
+            }
+
+            h2 {
+                /* 글자 색을 지정하고 */
+                color: #ff0000;
+                /* 글자크기를 1.5em, 즉 부모요소에 상대적인 크기로
+                부모요소의 대문자 M의 기준 너비를 기준으로 1.5배크기이다. */
+                font-size: 1.5em;
+                /* 글자를 중앙 위치로 정렬시킨다. */
+                text-align: center;
+            }
+
+            p {
+                font-size: 1.2em;
+                /* 줄 간격을 부모요소에 2배로 설정 */
+                line-height: 2em;
+                /* 글자의 굵기를 굵게 설정 */
+                font-weight: bold;
+                text-align: center;
+            }
+            /* accent라는 클래스명을 가진 요소에 */
+            .accent {
+                /* 글자색을 변경 */
+                color: #0000ff;
+            }
+            /* smalltext라는 클래스명을 가진 요소에 */
+            .smalltext {
+                /* 글자크기를 부모요소에 비해 0.7배 */
+                font-size: 0.7em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <img src="./Day05/image/top.jpg" alt="가정용 꿀사과" />
+            <div class="check">
+                <h1>확인하세요</h1>
+                <h2>주문 및 배송</h2>
+                <p>
+                    <span class="accent">오후 2시 이전</span> 주문건은 당일
+                    발송합니다<br />
+                    2시 이후 주문건은 다음날 발송합니다(주말 제외)
+                </p>
+                <hr />
+                <h2>교환 및 환불</h2>
+                <p>
+                    불만족시 <span class="accent">100% 환불</span>해 드립니다<br />
+                    고객센터로 전화주세요
+                </p>
+                <hr />
+                <h2>고객센터</h2>
+                <p>
+                    0000-0000<br />
+                    <span class="smalltext">
+                        상담시간 : 오전 9시 ~ 오후 6시 (토/일, 공휴일휴무)
+                    </span>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

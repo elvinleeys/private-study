@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>클래스 이름 선택 실습</title>
+    </head>
+
+    <body>
+        <ul>
+            <li class="car ferrari">페라리</li>
+            <li class="car">람보르기니</li>
+            <li class="car">벤츠</li>
+        </ul>
+    </body>
+    <script>
+        // 자동차 중 ferrari만 빨간색 글자로 설정,
+        // 나머지 자동차는 글자 크기를 20px로 설정(DOM객체.style.fontSize)
+
+        // console.log(cars)를 활용하여 어떠한 객체인지 알아볼수도 있지만
+        // getElementsByClassName은 HTMLCollection 객체로 반환하기에
+        // forEach를 가지고 있지 않으므로, prototype을 활용하여 
+        // Array의 forEach를 공유해주었다. 
+        HTMLCollection.prototype.forEach = Array.prototype.forEach;
+        // 자동차 li의 공통점은 class가 car로 묶여져 있다는 점이다.
+        // class를 활용하여 DOM 객체를 만들기위해 getElementsByClassName 메소드를 활용하였고
+        // car로 지정해 주었다.
+        const cars = document.getElementsByClassName("car");
+        // cars의 forEach를 돌려서 각각의 car를 가져오고
+        // ferrari만을 빨간색으로 지정해주기 위해
+        cars.forEach((car) => {
+            // classList를 활용하여 선별해주고
+            if (car.classList[1] === "ferrari") {
+                // 글자색만을 빨강으로 지정해준다.
+                car.style.color = "red";
+                //return을 썼기에 만일 ferrari를 만족한다면, 
+                // 글자색만을 변경한뒤 종료될 것이고 
+                return;
+            }
+            // ferrari가 아니라면 fontsize만을 적용한뒤 끝낼 것이다.
+            car.style.fontSize = "20px"; 
+        });
+    </script>
+</html>

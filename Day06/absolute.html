@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>position - absolute</title>
+        <style>
+            #element1 {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                /* position속성의 absolute는 이미지나 태그를 내가 원하는 곳에 
+                위치시킬 수 있다. */
+                position: absolute;
+                /* browser 창의 크기를 늘리거나 줄여도, 항상 왼쪽을 기준으로 30%, 
+                위쪽을 기준으로 20% 떨어진 위치에 element1이라는 id명을 가진
+                div태그가 존재한다. */
+                left: 30%;
+                top: 20%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="element1"></div>
+    </body>
+</html>

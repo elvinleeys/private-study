@@ -1,0 +1,35 @@
+<!-- 
+    relative
+        테두리를 만들어준다. 기본적으로 다른 요소의 영역을 침범하지 않는다.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>position - relative</title>
+        <style>
+            .element1,
+            .element2 {
+                /* position 속성의 relative는 가상의 테두리를 기준으로 위치해
+            다른 이미지를 침범하지 않는 속성값이다. */
+                position: relative;
+                width: 200px;
+                height: 100px;
+                top: 0;
+            }
+
+            .element1 {
+                background-color: coral;
+            }
+
+            .element2 {
+                background-color: brown;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="element1"></div>
+        <div class="element2"></div>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>객체를 동적으로 생성, 삽입, 삭제</title>
+    </head>
+    <body>
+        <p>DOM 트리에 동적으로 객체를 삽입할 수 있다.</p>
+        <p>
+            createElement("태그명"), appendChild("태그객체"),
+            removeChild("태그객체")
+        </p>
+        <p>
+            위 3개의 메소드를 사용해서 새로운 객체를 생성, 삽입, 삭제할 수 있다.
+        </p>
+        <a id="create" href="javascript:createDIV()">DIV 생성</a>
+    </body>
+    <script>
+        // 해당 script는 div태그를 생성한뒤 
+        // 무작위로 바탕색을 변경하는 동작을 제어할 예정이다.
+        let i = 0;
+        // 바탕색이 될 색깔의 범위를 지정하고 객체에 담아준다.
+        const colors = new Array(
+            "yellow",
+            "red",
+            "blue",
+            "green",
+            "skyblue",
+            "orange",
+            "pink"
+        );
+
+        const createDIV = () => {
+            // 위에서 작성된 color를 무작위로 선별해주기 위해서는 index를 랜덤하게 산출해야하고
+            // Math.random은 0보다는 크고 1보다는 작은 난수를 배출하고
+            // colors 객체의 길이값을 곱해준다면 이 값은 0~7사이의 값이 출력될 것이다.
+            // 이때 이 수는 난수에 의해 정수가 아니기 때문에
+            // Math.floor 메소드를 활용하여 정수로 변환시켜준뒤 randomIndex에 값을 담는다.
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            // createElement메소드를 활용하여 div태그요소를 생성하고
+            const div = document.createElement("div");
+            // innerText를 활용하여 div태그내 내용을 작성해준다.
+            div.innerText = `새로 생성된 DIV${++i} 태그입니다.`;
+            // div태그 style의 배경색을 colors객체에서 무작위로 산출한다.
+            div.style.backgroundColor = colors[randomIndex];
+            // div태그를 현재 웹문서에 어디에 포함시킬지 결정하며,
+            // body를 부모요소로 삼아 div요소를 연결시켜준다.
+            document.body.appendChild(div);
+        };
+    </script>
+</html>

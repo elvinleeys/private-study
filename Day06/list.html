@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>목록 스타일 실습</title>
+        <style>
+            a:link,
+            a:visited {
+                color: black;
+                text-decoration: none;
+            }
+            a:hover {
+                background-color: #000;
+                color: #fff;
+            }
+
+            a {
+                /* a 태그를 block요소로 바꾸고 */
+                display: block;
+                /* padding, 즉 안쪽 여백은 위/아래 10px, 좌/우 20px 주고 */
+                padding: 10px 20px;
+                /* 배경색을 #ccc로 변경 */
+                background-color: #ccc;
+            }
+
+            ul {
+                /* list태그의 bullet을 없애주고 */
+                list-style-type: none;
+            }
+
+            li {
+                /* float속성을 사용해 블록요소들이 나란히 배치되도록 한다. */
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+            </ul>
+        </nav>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>태그 선택자</title>
+        <style>
+            /* 태그 선택자는 다른 선택자에 비해 스타일 적용 우선순위가 낮은 편이지만
+            스타일을 적용할 태그명을 쓰고 {}안에 적용할 스타일을 작성한다는 점에서
+            전체선택자에 비해 우선순위가 높다. */
+            /* h2 태그의 글자색을 파란색으로 설정 */
+            h2 {
+                color: blue;
+            }
+            /* p태그의 글자 크기(font-size)를 12px로 설정, 기본 브라우저의 글자 크기는 16px */
+            p {
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>HTML 태그 선택자</h1>
+        <h2>특정 태그를 사용한 요소에 스타일 적용하기</h2>
+        <p>
+            전체 선택자 다으므로 많은 요소들에 스타일을 적용한는 태그 선택자(tag
+            selector)는<br />
+            특정 태그가 쓰인 모든 요소에 스타일을 적용한다.
+        </p>
+    </body>
+</html>

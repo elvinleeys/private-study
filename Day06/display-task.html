@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>display - flex 실습</title>
+        <style>
+            #flex-wrap {
+                /* display속성의 flex를 사용하면 div, 즉 블록요소로 묶은 image들도
+                 일렬로 배치되게된다.*/
+                display: flex;
+                justify-content: center;
+            }
+
+            #float-wrap {
+                width: 80%;
+                min-width: 840px;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            #float-wrap div {
+                /* float 역시 display속성의 flex와 유사하게 블록요소를 나란히 배치하지만
+                브라우저에서 배율을 조절함에 따라 블록요소들이 하나씩 분리된다.
+                flex가 등장한 이후 잘 사용되지 않고 있다. */
+                float: left;
+                /* display: inline-block; */
+            }
+        </style>
+    </head>
+    <body>
+        <div id="flex-wrap">
+            <div>
+                <img src="./image/img1.jpg" alt="" />
+            </div>
+            <div>
+                <img src="./image/img2.jpg" alt="" />
+            </div>
+            <div>
+                <img src="./image/img3.jpg" alt="" />
+            </div>
+        </div>
+
+        <div id="float-wrap">
+            <div>
+                <img src="./image/img1.jpg" alt="" />
+            </div>
+            <div>
+                <img src="./image/img2.jpg" alt="" />
+            </div>
+            <div>
+                <img src="./image/img3.jpg" alt="" />
+            </div>
+        </div>
+    </body>
+</html>

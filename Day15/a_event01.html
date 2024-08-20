@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>클릭 이벤트</title>
+    </head>
+    <body>
+        <h3>CSS 스타일 동적 변경</h3>
+        <hr />
+        <p>변경될 요소</p>
+        <input type="button" value="스타일 변경" />
+    </body>
+    <script>
+        const input = document.querySelector("input[type=button]");
+        const target = document.querySelector("p");
+        // addEventListener는 이벤트 처리기로
+        // 현재 input태그에 click이벤트가 발생했을 때의 변화를 서술한다.
+        input.addEventListener("click", (e) => {
+            // e.target : 이벤트가 발생한 객체
+            // 따라서 console로 출력해보면, e.target은 input태그가 출력된다.
+            // console.log(e.target);
+            // with문은 JS내에서 특정 조건 만족시 사용되는 함수로
+            // 특정 객체가 반복시 with()의 ()안에 반복될 구문을 작성해준다.
+            // with (target.style) {
+            //     fontSize = "30px";
+            //     border = "3px dashed magenta";
+            //     width = "100px";
+            //     textAlign = "center";
+            // }
+        });
+    </script>
+</html>

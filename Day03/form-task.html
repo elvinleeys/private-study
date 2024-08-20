@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>네이버: 회원가입</title>
+    </head>
+    <body>
+        <!-- 네이버 회원가입 창을 보면 왼쪽 상단에 네이버 로고가 있고
+        클릭시 NAVER의 메인 화면으로 이동하게 된다.
+        이를 통해 img태그로 해당 NAVER로고 이미지를 따오고
+        a 태그를 통해 이미지클릭시 해당 네이버 메인화면으로 이동하도록 한다. -->
+        <a href="https://www.naver.com">
+            <img
+                src="https://i.namu.wiki/i/O_WfY01sM81pAk50fxe-CgHx-pVnipkiexM-biFWhdIBezk7_xJfDiu7P8hzraM5oNm0r92GCaXrfoZ14RNHVg.svg"
+                alt="네이버로 이동"
+                width="100px"
+            />
+        </a>
+        <!-- 아래부터 회원가입시 사용자로부터 입력받아 데이터를 서버로 전송해야하기에 
+        form태그를 적용한다.-->
+        <form>
+            <!-- 회원가입 화면을 보면 폼 그룹이 크게 2가지로
+            첫번째 그룹은 아이디/비밀번호 등을 입력하는 부분
+            두번째 그룹은 그 외 인적사항을 적는 그룹으로
+            이를 fieldset으로 묶어준다. -->
+            <fieldset>
+                <!-- 각각의 입력형식에 맞게, 아이디/이메일은 text type을
+                비밀번호는 password type을 활용한다. -->
+                <input
+                    type="text"
+                    placeholder="아이디"
+                    name="user-id"
+                    required-autocompleted="none"
+                />
+                <input
+                    type="password"
+                    placeholder="비밀번호"
+                    name="user-password"
+                />
+                <input
+                    type="text"
+                    placeholder="[선택] 이메일주소 (비밀번호 찾기 등 본인 확인용)"
+                    name="user-e-mail"
+                />
+            </fieldset>
+            <fieldset>
+                <p>
+                    <input type="text" placeholder="이름" name="user-name" />
+                </p>
+                <p>
+                    <input
+                        type="text"
+                        placeholder="생년월일 8자리"
+                        name="user-birthday"
+                    />
+                </p>
+                <p>
+                    <!-- NAVER 회원가입화면에서 통신사는
+                    해당 select형식이 아닌 자체적으로 만든 형식이므로
+                    select형식으로 대체한다. -->
+                    <select name="통신사">
+                        <option value="skt">skt</option>
+                        <option value="skt 알뜰폰">skt 알뜰폰</option>
+                        <option value="kt">kt</option>
+                        <option value="kt 알뜰폰">kt 알뜰폰</option>
+                        <option value="LG U+">LG U+</option>
+                        <option value="LG U+ 알뜰폰">LG U+ 알뜰폰</option>
+                    </select>
+                </p>
+                <p>
+                    <!-- 성별선택요소는 하나만 선택할 수 있으므로
+                    radio type을 사용하며, 해당 남,녀는 화면에서 붙어서 보이므로
+                    display를 inline-block으로 설정해줌으로써 같이 붙어있게
+                    만든다. -->
+                    <a style="display: inline-block">
+                        <lable>
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="남자"
+                            />남자
+                        </lable>
+                        <lable>
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="여자"
+                            />여자
+                        </lable>
+                    </a>
+                </p>
+                <p>
+                    <!-- 성별과 마찬가지로 국적선택요소는 하나만 선택할 수 있으므로
+                    radio type을 사용하며, 해당 내/외국인은 화면에서 붙어서 보이므로
+                    display를 inline-block으로 설정해줌으로써 같이 붙어있게
+                    만든다. -->
+                    <a style="display: inline-block">
+                        <lable>
+                            <input
+                                type="radio"
+                                name="nationality"
+                                value="내국인"
+                            />
+                            내국인
+                        </lable>
+                        <lable>
+                            <input
+                                type="radio"
+                                name="nationality"
+                                value="외국인"
+                            />
+                            외국인
+                        </lable>
+                    </a>
+                </p>
+                <p>
+                    <input
+                        type="text"
+                        placeholder="휴대전화번호"
+                        name="user-mobilephone"
+                    />
+                </p>
+            </fieldset>
+            <p>
+                <input type="checkbox" />
+            </p>
+        </form>
+    </body>
+</html>

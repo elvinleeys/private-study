@@ -1,0 +1,6 @@
+/* 외부 스타일 시트에서 이렇게 태그에 스타일을 적용하면 */
+h1 {
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+}

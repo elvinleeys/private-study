@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>form 태그와 input 태그</title>
+    </head>
+    <body>
+        <form>
+            <!-- input태그 type = text는 텍스트값을 입력받는 태그
+            placeholder는 값을 입력받는데 있어 힌트를 제공하는 속성이다.
+            name 속성은 폼을 제출할때 서버에서 폼 데이터를 참조하는데 사용하거나
+                 JS에서 데이터를 참조하는데 사용
+            required 속성은 값을 필수적으로 입력해야만 할 때 사용
+            autocoplete는 이전에 입력받던 값을 드롭다운 형식으로 보여주는 속성이다. -->
+            <input
+                type="text"
+                placeholder="아이디를 입력해주세요."
+                name="user-id"
+                required
+                autocomplete="none"
+            />
+            <!-- input태그의 type="password"는 암호를 입력할때 사용하는 형식으로
+            입력값을 * or ●으로 보여준다. -->
+            <input
+                type="password"
+                placeholder="비밀번호를 입력해주세요."
+                name="user-password"
+            />
+            <!-- fieldset은 폼 요소를 그룹으로 묶을 때 사용하는 태그로 -->
+            <fieldset>
+                <!-- 그룹에 이름을 붙여주는 legend와 함께 사용된다. -->
+                <legend>성별</legend>
+                <!-- label태그는 텍스트와 input태그를 연결해줌으로써 둘 중 하나만 클릭해도
+                선택이 가능하도록 한다. -->
+                <label>
+                    <!-- input태그의 type="radio"는 여러항목 중 하나만 선택할 수 있도록
+                    하는 태그이다. -->
+                    <input type="radio" name="gender" value="선택안함" />
+                    선택안함
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="여자" /> 여자
+                </label>
+                <!-- 원하는 input태그의 id값을 for에 작성하면 멀리 있어도 반응한다. -->
+                <label for="gender"> 남자 </label>
+                <input type="radio" name="gender" id="gender" value="남자" />
+            </fieldset>
+            <fieldset>
+                <legend>취미</legend>
+                <label
+                    ><input type="checkbox" name="hobby" value="영화감상" />
+                    영화감상</label
+                >
+                <label
+                    ><input type="checkbox" name="hobby" value="골프" />
+                    골프</label
+                >
+                <label
+                    ><input type="checkbox" name="hobby" value="볼링" />
+                    볼링</label
+                >
+                <label
+                    ><input type="checkbox" name="hobby" value="기타" />
+                    기타</label
+                >
+                <label
+                    ><input type="checkbox" name="hobby" value="테니스" />
+                    테니스</label
+                >
+                <label
+                    ><input type="checkbox" name="hobby" value="산책" />
+                    산책</label
+                >
+                <label
+                    ><input type="checkbox" name="hobby" value="연애" />
+                    연애</label
+                >
+                <label
+                    ><input type="checkbox" name="hobby" value="게임" />
+                    게임</label
+                >
+                <label
+                    ><input type="checkbox" name="hobby" value="등산" />
+                    등산</label
+                >
+                <label
+                    ><input type="checkbox" name="hobby" value="축구" />
+                    축구</label
+                >
+                <label
+                    ><input type="checkbox" name="hobby" value="노래" />
+                    노래</label
+                >
+            </fieldset>
+            <p>
+                <!-- input태그의 type="date"는 날짜를 입력받기 위한 형식 -->
+                <input type="date" />
+            </p>
+            <p>
+                <!-- input태그의 type="datetime-local"은 사용자가 
+                날짜와 시간을 선택할 수 있도록 컨트롤을 생성하는 형식 -->
+                <input type="datetime-local" />
+            </p>
+            <p>
+                <!-- select 태그는 사용자가 직접 입력하는 형식 대신
+                    option태그를 활용하여 항목들을 만들어주고
+                    드롭다운 형식으로 사용자가 선택하게 만들어주는 태그 -->
+                <select name="major">
+                    <option value="computer">컴퓨터공학과</option>
+                    <option value="model">모델학과</option>
+                    <option value="nurse">간호학과</option>
+                    <option value="music">실용음악과</option>
+                    <option value="mechanic">기계공학과</option>
+                    <option value="messcom">신문방송학과</option>
+                    <option value="management">경영학과</option>
+                </select>
+            </p>
+            <p>
+                <!-- textarea는 텍스트의 길이에 구애받지 않고
+                사용자가 텍스트를 작성할 수 있도록 해주는 태그로써
+                rows와 cols 속성을 사용해 행과 열의 길이를 조정할 수 있다.
+                또한 textarea태그 사이에 텍스트를 입력하면
+                textarea에 미리 해당 텍스트가 작성될 수 있도록 한다. -->
+                <textarea cols="30" rows="3">상품명:</textarea>
+            </p>
+            <!-- label태그는 이와 같이 for속성을 사용하여
+            멀리 떨어져 있는 태그와 id명을 사용해서 연결해 줄 수 있다. -->
+            <label for="file">
+                <img src="add.png" />
+            </label>
+            <!-- type="file"은 파일첨부를 가능하게 해주는 형식으로
+            최근에는 display="none"으로 보이지 않게 하고,
+            해당 사이트의 분위기에 맞는 이미지를 대신 보여주기도 한다. -->
+            <input type="file" id="file" style="display: none" />
+            <p>
+                <!-- input태그의 type="submit"은 폼에 입력한 정보를 서버로 전송하는 
+                    형식이며 전송된 정보는 <form>태그의 action속성에서 지정한
+                    폼 처리 프로그램에 넘겨진다. -->
+                <input type="submit" value="완료" />
+            </p>
+        </form>
+    </body>
+</html>

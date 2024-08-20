@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>display - flex</title>
+        <style>
+            /* 이때 flex 속성을 사용하면 
+        자식 요소 중, 블록 요소에 flex가 적용되어 가로로 배치된다. */
+            div.wrap {
+                display: flex;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div class="wrap">
+                <!-- 1열, 2열...4열을 감싸고 있는 div태그들은 각각이 블록요소이다.  -->
+                <!-- 본래는 이것들을 한줄로 늘여써놓아도, 한줄씩 총 4줄을 차지할 것이다. -->
+                <div>1열</div>
+                <div>2열</div>
+                <div>3열</div>
+                <div>4열</div>
+            </div>
+            <div class="wrap">
+                <div>1열</div>
+                <div>2열</div>
+                <div>3열</div>
+                <div>4열</div>
+            </div>
+            <div class="wrap">
+                <div>1열</div>
+                <div>2열</div>
+                <div>3열</div>
+                <div>4열</div>
+            </div>
+        </div>
+    </body>
+</html>

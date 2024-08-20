@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>폼 실습3</title>
+    </head>
+    <style>
+        /* ul태그의 list가 bullet(●)을 보이지 않도록 설정하기 위해
+        list-style을 none으로 설정 */
+        ul {
+            list-style: none;
+        }
+
+        /* fieldset의 테두리를 보이지 않게 하기위
+        border의 굵기를 0으로 설정 */
+        fieldset {
+            border: 0 solid black;
+        }
+    </style>
+    <body>
+        <!-- 제목 태그이므로 h1태그를 사용하여 제목 강조 -->
+        <h1>프런트엔드 개발자 지원서</h1>
+        <!-- 해당 직무에 대한 상세내용으로 단락을 구분하기 위해 p태그를 사용 -->
+        <p>
+            HTML, CSS, 자바스크립트의 기술을 이해하고 실무 경험이 있는 분을
+            찾습니다.
+        </p>
+        <!-- 선을 그어 직무와 지원서를 구분하기 위해 hr태그를 사용 -->
+        <hr />
+        <!-- 본격적인 입력양식 작성을 위해 form태그 사용 -->
+        <form>
+            <!-- 폼의 그룹은 크게 3개로 개인정보, 지원직무, 지원동기로
+            나누었음 -->
+            <fieldset>
+                <!-- 그룹의 이름 -->
+                <strong><legend>개인 정보</legend></strong>
+                <ul>
+                    <li>
+                        <!-- label을 사용하여 input태그를 연결하였고
+                        해당 작성을 어떻게 할지 힌트를 주기위해
+                        placeholder를 사용 -->
+                        <label for="name">이름</label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="공백 없이 입력하세요"
+                        />
+                    </li>
+                    <li>
+                        <label for="phone">연락처</label>
+                        <input type="tel" id="phone" />
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <strong><legend>지원 분야</legend></strong>
+                <ul>
+                    <li>
+                        <!-- 지원직무는 한가지만 선택해야하므로
+                        input태그의 radio type을 사용하였고
+                        한가지만 선택가능하므로 name을 동일하게 설정 -->
+                        <label>
+                            <input type="radio" name="app_field" />웹 퍼블리싱
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="app_field" />웹
+                            애플리케이션 개발
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="app_field" />개발 환경
+                            개선
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <strong><legend>지원 동기</legend></strong>
+                <!-- 해당 text-area는 텍스트를 작성할 수 있는 영역으로
+                    cols를 사용하여 열의 글자수를 60자로 제한하였으며, 
+                    화면에 보일 수 있는 줄 수를 5줄로 제한하기 위해 rows를 사용하였다. -->
+                <textarea
+                    cols="60"
+                    rows="5"
+                    placeholder="본사 지원 동기를 간략히 써 주세요"
+                ></textarea>
+            </fieldset>
+            <!-- input태그의 submit type은 데이터를 서버로 전송하기 위함 -->
+            <input type="submit" value="접수하기" />
+            <!-- input태그의 reset type은 해당 작성 내용들을 다시
+                reset하기 위함 -->
+            <input type="reset" value="다시 쓰기" />
+        </form>
+    </body>
+</html>

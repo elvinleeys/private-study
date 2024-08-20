@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>overflow</title>
+        <style>
+            /* 이미지 파일이 웹브라우저 창의 기본 크기에 비해 
+               넘칠 경우 스크롤바가 생긴다.
+               이때 이미지를 한정된 공간에 어떻게 가둘것인지에 대해 
+               overflow속성을 사용한다. */
+            #image-wrap {
+                width: 200px;
+                height: 200px;
+                /* overflow의 scroll속성값은 한정된 공간안에 scroll바가 생기며
+                넘치는 이미지를 가둔다. */
+                /* overflow: scroll; */
+                /* overflow의 hidden속성값은 넘치는 이미지에 대해 
+                scroll바가 생기진 않으며
+                다만 한정된 공간에 넘치는 부분이 숨겨진다.*/
+                overflow: hidden;
+            }
+            /* text값이 넘치는 경우에도 overflow속성을 사용해 숨길 수 있다. */
+            #text-wrap {
+                width: 200px;
+                height: 60px;
+                /* 단순히 overflow hidden을 사용할 경우에는 이미지처럼
+                넘치는 부분이 숨겨지나 */
+                overflow: hidden;
+                /* text-overflow속성의 ellipsis를 사용하면
+                넘치는 부분이 있음을 의미하는 ...의 생략기호로 표시된다. */
+                text-overflow: ellipsis;
+                /* white-space속성은 줄바꿈 및 공백을 설정하는 속성으로
+                nowrap속성값은 줄바꿈을 무시하라는 의미이다. */
+                white-space: nowrap;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="image-wrap">
+            <img src="./image/icon.png" />
+        </div>
+
+        <div id="text-wrap">
+            <span>
+                안녕하세요, 반갑습니다. 저는 CSS가 좋아요. 여러분도 그렇죠?
+            </span>
+        </div>
+    </body>
+</html>

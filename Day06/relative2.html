@@ -1,0 +1,60 @@
+<!-- 
+    relative : 테두리를 만들어준다. 기본적으로 다른 요소의 영역을 침범하지 않는다.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>position - relative</title>
+        <style>
+            .element1,
+            .element2 {
+                /* position의 속성값 relative는 보통 단순히 홀로 쓰이기보다는 */
+                position: relative;
+                width: 200px;
+                height: 100px;
+                top: 0;
+            }
+
+            .element1 {
+                background-color: coral;
+            }
+
+            .element2 {
+                background-color: brown;
+            }
+
+            div.in1,
+            div.in2 {
+                /* 이렇게 absolute 속성값과 함께 쓰여 relative 속성값을 지닌 태그들을
+                absolut 속성값을 지닌 태그들안에 가둔다. */
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                right: 50%;
+                top: 50%;
+                transform: translate(50%, -50%);
+            }
+
+            div.in1 {
+                background-color: red;
+                /* position속성의 속성값이 absolute일 경우 이미지가 겹칠 수 있는데
+                이때 z-index의 속성값이 더 크면 클수록 사용자의 화면에 보이게 된다. */
+                z-index: 2;
+            }
+
+            div.in2 {
+                z-index: 1;
+                background-color: violet;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="element1">
+            <div class="in1"></div>
+            <div class="in2"></div>
+        </div>
+        <div class="element2"></div>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>표만들기 태그</title>
+        <style>
+            table {
+                border: 1px solid black;
+            }
+
+            td,
+            th {
+                border: 1px solid black;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 표를 만들기 위해서는 우선 table태그를 사용하고 -->
+        <table>
+            <!-- 표의 제목을 설정하기 위해 caption태그를 사용한다. -->
+            <caption>
+                요안도라 객실
+            </caption>
+            <!-- 접근성과, 후에 관리를 용이하게 하기 위해 
+                제목의 thead, 본문에 tbody, 요약에 tfoot을 설정해준다. -->
+            <thead>
+                <!-- 각각의 행은 tr태그로 구분해주며 -->
+                <tr>
+                    <!-- 표안의 각 열의 제목들은 th태그로 구분해준다. -->
+                    <th>방 이름</th>
+                    <th>대상</th>
+                    <th>크기</th>
+                    <th>가격</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- 각 행 안에 있는 셀은 td태그가 만들어주며 -->
+                    <td>유채방</td>
+                    <td>여성도미토리</td>
+                    <!-- 행을 합칠 때는 rowspan을 속성으로 사용하며 값은 
+                    합칠 셀의 개수를 적용하면 셀 병합이 가능해진다. -->
+                    <td rowspan="3">4인실</td>
+                    <td rowspan="4">1인 20,000원</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">동백방</td>
+                    <td>동성 도미토리</td>
+                </tr>
+                <tr>
+                    <td>가족 1팀</td>
+                </tr>
+                <tr>
+                    <td>천혜향방</td>
+                    <td>-</td>
+                    <td>2인실</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <!-- 열을 합칠때는 colspan 속성을 사용해주며
+                    값역시 행을 합칠 때와 동일하게 합칠 셀의 개수를 
+                    적용해주면 된다. -->
+                    <td colspan="4">바깥채 전체를 렌트합니다.</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

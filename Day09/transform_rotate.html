@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>rotate_실습</title>
+        <style>
+            #container {
+                width: 200px;
+                margin: 30px auto;
+            }
+            img {
+                border: 1px solid #ccc;
+                border-radius: 50%;
+                box-shadow: 5px 5px 30px 2px #000;
+                /* 애미메이션 효과에 대해 rotate으로 지정된 animation을
+                2.5s동안 무한 반복시켜라! */
+                animation: rotate 2.5s infinite;
+            }
+            /* keyframes속성은 애니매이션이 바뀌는 지점을 설정하는 속성으로
+               rotate이라는 애니메이션에 대해 */
+            @keyframes rotate {
+                /* 시작부분에서는 */
+                from {
+                    /* Y축으로 0도만큼 회전하고 */
+                    transform: rotateY(0deg);
+                    /* 입체감이 날 수 있는 perspective에 대해
+                    0px만큼 깊이값을 지정 */
+                    perspective: 0px;
+                }
+                /* 중간 지점에서는 */
+                50% {
+                    /* Y축으로 180도만큼 회전하고 */
+                    transform: rotateY(-180deg);
+                    /* 깊이감은 200px만큼 준다. */
+                    perspective: 200px;
+                }
+                to {
+                    /* 이렇게 따로 지정할 수도 있지만 */
+                    transform: rotateY(-360deg);
+                    perspective: 200px;
+                    /* transform속성을 사용해 한꺼번에 지정할 수 있다. */
+                    /* transform: perspective(200px) rotateY(-360deg); */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <img src="./image/bear.jpg" alt="곰인형 사진" />
+        </div>
+    </body>
+</html>

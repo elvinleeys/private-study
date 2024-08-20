@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>폼 태그 실습2</title>
+        <style>
+            /* ul태그의 list항목의 bullet(●)을 보이지 않게 하고 싶어
+            list-style을 none으로 설정 */
+            ul {
+                list-style: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>예약 정보</h1>
+        <form>
+            <ul>
+                <li>
+                    <!-- 이름을 입력받는 형식이므로 input태그를 text type으로
+                    설정하고 label로 id를 통해 연결 -->
+                    <label for="r-name">이름</label>
+                    <input type="text" id="r-name" />
+                </li>
+                <li>
+                    <!-- 연락처를 입력받는 형식으로 input태그의 type을 tel로 설정
+                    단 해당 기능을 지원하지 않는 브라우저의 경우 텍스트가 입력가능하여
+                    사실상 text나 별반 차이가 보이지 않는다. -->
+                    <label for="r-phone">전화</label>
+                    <input type="tel" id="r-phone" />
+                </li>
+                <li>
+                    <label for="r-email">이메일</label>
+                    <input type="email" id="r-email" />
+                </li>
+                <li>
+                    <!-- 예약 정보를 서버로 전달하기 위해
+                    데이터를 전달하는 input태그의 submit type을 사용 -->
+                    <input type="submit" value="예약하기" />
+                </li>
+            </ul>
+        </form>
+    </body>
+</html>
